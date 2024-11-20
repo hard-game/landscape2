@@ -122,7 +122,7 @@ const GridItem = (props: Props) => {
           style={props.item.featured && props.item.featured.label ? { border: `2px solid ${props.borderColor}` } : {}}
           class={`card rounded-0 position-relative p-0 ${styles.card}`}
           classList={{
-            bigCard: !isUndefined(props.item.featured),
+            bigCard: !isUndefined(props.item.featured) || (!isUndefined(props.item.tag) && props.item.tag == "featured"),
             withLabel: !isUndefined(props.item.featured) && !isUndefined(props.item.featured.label),
             whithoutRepo: isUndefined(props.item.oss) || !props.item.oss,
             archived: !isUndefined(props.item.maturity) && props.item.maturity === 'archived',
@@ -158,7 +158,7 @@ const GridItem = (props: Props) => {
         style={props.item.featured && props.item.featured.label ? { border: `2px solid ${props.borderColor}` } : {}}
         class={`card rounded-0 position-relative p-0 ${styles.card}`}
         classList={{
-          bigCard: !isUndefined(props.item.featured),
+          bigCard: !isUndefined(props.item.featured) || (!isUndefined(props.item.tag) && props.item.tag == "featured"),
           withLabel: !isUndefined(props.item.featured) && !isUndefined(props.item.featured.label),
           whithoutRepo: isUndefined(props.item.oss) || !props.item.oss,
           archived: !isUndefined(props.item.maturity) && props.item.maturity === 'archived',
